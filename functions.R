@@ -190,7 +190,7 @@ rho.iteration = function(max_itr, seg, error = 3, weight = 1)
 #-Model Generator Code---------------------------------------------------------------------------#
 #================================================================================================#
 
-model.select = function(y,x,n,tol,criterion)
+model.select = function(y, x, n, tol, criterion)
 {
   ## Make sure that no duplicated varaibles selected for the same model
   var = combn(colnames(x[,-1]),n) 
