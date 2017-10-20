@@ -93,8 +93,8 @@ body <- dashboardBody(
                
                plotlyOutput("run_off", height = 550),
                
-               p("Notice the difference between number of issuers at the end of last year and 
-                 in the beginning of this year. Negative difference means portfolio runoff and 
+               p("Notice the difference between number of issuers at the end of last year and in
+                 the beginning of this year. Negative difference means issuer exit the market and 
                  positive means new issuers enter the market."),
                # p(" Portfolio run-off is mainly caused by:"),
                # p("1. Loans are paid off at scheduled maturity dates."),
@@ -427,7 +427,7 @@ body <- dashboardBody(
     tabItem(
       tabName = "limit",
       
-      h4("Model Limitation and Future Improvement [Draft]"), br(),
+      h4("Model Limitation and Future Improvement"), br(),
       
       column(6, offset = 3,
              

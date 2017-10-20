@@ -17,7 +17,7 @@ dataInput_run <- reactive({
   new_enter$NetNewEnter = round(new_enter$NetNewEnter, 0)
   new_enter = filter(new_enter, Year <= 2016)
   
-  return(new_enter %>% filter(Rating == input$run_rating) %>% select(-2))
+  return(new_enter %>% filter(Rating == input$run_rating) %>% select(-Rating))
 })
 
 output$run_off <- renderPlotly({
@@ -25,13 +25,13 @@ output$run_off <- renderPlotly({
   color_pos_neg = ifelse(data$NetNewEnter>=0, "#16a6b6", "#ee6557")
   
   plot_ly(data) %>%
-    add_trace(x = ~Year, y = ~round(100*data$NewRate, 2), type = "bar", name = "Net New Loan", marker = list(color = color_pos_neg)) %>%
-    add_trace(x = ~Year, y = ~round(100*data$NewRate, 2), type = "scatter", mode = "lines", line = list(shape = "spline", color = "black"), name = "New Loan Rate", yaxis = "y2") %>%
+    add_trace(x = ~Year, y = ~data$NetNewEnter, type = "bar", name = "Net New Enter", marker = list(color = color_pos_neg)) %>%
+    add_trace(x = ~Year, y = ~round(100*data$NewRate, 2), type = "scatter", mode = "lines", line = list(shape = "spline", color = "black"), name = "New Enter Rate", yaxis = "y2") %>%
     layout(legend = list(orientation = "h", x = 0.25, y = -0.1),
            margin = list(r = 80), hovermode = "x", 
            xaxis = list(title = "", dtick = 2),
-           yaxis  = list(side = "left", title = "Net New Loan", showgrid = FALSE, zeroline = FALSE),
-           yaxis2 = list(side = "right", title = "New Loan Rate", showgrid = FALSE, zeroline = FALSE, overlaying = "y", ticksuffix = "%")) %>% 
+           yaxis  = list(side = "left", title = "Net New Enter", showgrid = FALSE, zeroline = FALSE),
+           yaxis2 = list(side = "right", title = "New Enter Rate", showgrid = FALSE, zeroline = FALSE, overlaying = "y", ticksuffix = "%")) %>% 
     config(displayModeBar = F)
 })
 
