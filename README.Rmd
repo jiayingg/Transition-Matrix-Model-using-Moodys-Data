@@ -8,11 +8,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library(emo)
 ```
 
-Shiny Dashboard of this project can be found [Here](https://rachelgu.shinyapps.io/zscore_moody/). 
+### Overview
+
+Shiny Dashboard of this project can be found [Here](https://rachelgu.shinyapps.io/zscore_moody/). *Its quite a big project so it takes a while to render. Please be patient.* `r emo::ji("smile")` `r emo::ji("smile")`
 
 Data source: [Moody's Annual Default Study](https://www.moodys.com/researchdocumentcontentpage.aspx?docid=PBC_1059749), includes data of default, loss and rating transition experience of corporate bond, loan and deposit issuers. This study covers financial institutions, corporates and regulated utilities that have long-term debt ratings.
-
-*Its quite a big project so it takes a while to render. Please be patient.* `r emo::ji("smile")` `r emo::ji("smile")`
 
 ### Exploratory Analysis
 
@@ -24,6 +24,12 @@ Data source: [Moody's Annual Default Study](https://www.moodys.com/researchdocum
 
 ### Model Generation
 
+`model.select(y, x, n, tol, criterion)`
+
+`Sign.Check_3v(Model.Data)`  `Sign.Check_2v(Model.Data)`
+
 ### Model Implementation
 
-`model.select(y, x, n, tol, criterion)`
+`df.backtest(balcnt, zlist, rho, cml)`
+
+`df.scenario(prerate, zlist, rho, cml)`
