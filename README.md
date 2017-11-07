@@ -17,6 +17,14 @@ Shiny Dashboard of this project can be found [here](https://rachelgu.shinyapps.i
 
 ### Z Score Generation
 
+**Key formula:**
+
+<center>
+<img src="https://latex.codecogs.com/gif.latex?X%3D%5Csqrt%5Crho%20Z%20&plus;%20%5Csqrt%7B1-%5Crho%7D%5C%20%5Cepsilon"/>
+</center>
+<center>
+<img src="https://latex.codecogs.com/gif.latex?P%28G%2Cg%7CZ_%7Bt%7D%29%3D%5CPhi%28%5Cfrac%7BX_%7B%28g&plus;1%29%7D%5EG-%5Csqrt%7B%5Crho%7DZ_%7Bt%7D%7D%7B%5Csqrt%7B1-%5Crho%7D%7D%29-%5CPhi%5Cfrac%7B%28X_g%5EG-%5Csqrt%5Crho%20Z_%7Bt%7D%29%7D%7B%5Csqrt%7B1-%5Crho%7D%7D"/>
+</center>
 `delta.transition(rho, Zt, cml)`
 
 `rho.iteration(max_itr, seg, error = 3, weight = 1)`
